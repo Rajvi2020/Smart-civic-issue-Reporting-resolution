@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Department Panel{% endblock %}</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        body{
+            font-family:'Poppins',sans-serif;
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body class="bg-black text-white">
+
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-72 bg-gray-950 border-r border-yellow-500 flex flex-col">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-3 p-6 border-b border-gray-700">
+                <i class="fa-solid fa-building text-3xl text-yellow-400"></i>
+                <h2 class="text-2xl font-bold text-yellow-400">
+                    Department
+                </h2>
+            </div>
+
+            <!-- Menu -->
+            <nav class="flex-1 p-4">
+
+                <ul class="space-y-2">
+
+                    <li>
+                        <a href="{% url 'dashboard' %}"
+                           class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-yellow-500 hover:text-black duration-300">
+                            <i class="fa-solid fa-house"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'assigned_complaints' %}"
+                           class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-yellow-500 hover:text-black duration-300">
+                            <i class="fa-solid fa-list-check"></i>
+                            Assigned Complaints
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'update_status' %}"
+                           class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-yellow-500 hover:text-black duration-300">
+                            <i class="fa-solid fa-rotate"></i>
+                            Update Status
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'resolved_complaints' %}"
+                           class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-yellow-500 hover:text-black duration-300">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Resolved Complaints
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'report' %}"
+                           class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-yellow-500 hover:text-black duration-300">
+                            <i class="fa-solid fa-chart-column"></i>
+                            Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'notification' %}"
+                           class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-yellow-500 hover:text-black duration-300">
+                            <i class="fa-solid fa-bell"></i>
+                            Notifications
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'profile' %}"
+                           class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-yellow-500 hover:text-black duration-300">
+                            <i class="fa-solid fa-user"></i>
+                            Profile
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Logout -->
+            <div class="p-4 border-t border-gray-700">
+
+                <a href="#"
+                   class="flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 py-3 rounded-lg font-semibold duration-300">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Navbar -->
+            <header class="bg-gray-950 border-b border-yellow-500 px-8 py-5 flex justify-between items-center">
+
+                <h1 class="text-3xl font-bold text-yellow-400">
+                    {% block page_title %}
+                    Dashboard
+                    {% endblock %}
+                </h1>
+
+                <div class="flex items-center gap-4">
+
+                    <span class="text-gray-300">
+                        Welcome,
+                        <span class="text-yellow-400 font-semibold">
+                            {{ request.user.username }}
+                        </span>
+                    </span>
+
+                    <img src="{% static 'images/user.png' %}"
+                         class="w-12 h-12 rounded-full border-2 border-yellow-500 object-cover">
+
+                </div>
+
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 p-8 bg-black">
+
+                {% block content %}
+
+                {% endblock %}
+
+            </main>
+
+        </div>
+
+    </div>
+
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

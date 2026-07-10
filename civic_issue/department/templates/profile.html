@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block page_title %}My Profile{% endblock %}
+
+
+{% block content %}
+
+
+<div class="max-w-4xl mx-auto">
+
+
+<!-- Profile Card -->
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl shadow-lg p-8">
+
+
+<div class="flex flex-col items-center">
+
+
+<!-- Profile Image -->
+
+<div class="w-32 h-32 rounded-full bg-yellow-500 flex items-center justify-center text-black text-5xl font-bold">
+
+R
+
+</div>
+
+
+<h2 class="text-3xl font-bold text-yellow-400 mt-5">
+
+Riya Jivani
+
+</h2>
+
+
+<p class="text-gray-400">
+
+Department Officer
+
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- Details -->
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+
+
+
+<div>
+
+<label class="text-gray-400">
+Full Name
+</label>
+
+<input 
+type="text"
+value="Riya Jivani"
+class="w-full mt-2 bg-gray-800 text-white border border-gray-700 rounded-lg p-3">
+
+</div>
+
+
+
+
+
+<div>
+
+<label class="text-gray-400">
+Email
+</label>
+
+<input 
+type="email"
+value="riya@gmail.com"
+class="w-full mt-2 bg-gray-800 text-white border border-gray-700 rounded-lg p-3">
+
+</div>
+
+
+
+
+
+<div>
+
+<label class="text-gray-400">
+Mobile Number
+</label>
+
+<input 
+type="text"
+value="9876543210"
+class="w-full mt-2 bg-gray-800 text-white border border-gray-700 rounded-lg p-3">
+
+</div>
+
+
+
+
+
+<div>
+
+<label class="text-gray-400">
+Department
+</label>
+
+
+<select class="w-full mt-2 bg-gray-800 text-white border border-gray-700 rounded-lg p-3">
+
+
+<option>
+Sanitation Department
+</option>
+
+
+<option>
+Road Department
+</option>
+
+
+<option>
+Water Department
+</option>
+
+
+<option>
+Electricity Department
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="md:col-span-2">
+
+
+<label class="text-gray-400">
+Office Address
+</label>
+
+
+<textarea
+class="w-full mt-2 bg-gray-800 text-white border border-gray-700 rounded-lg p-3">
+
+Rajkot Municipal Corporation
+
+</textarea>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- Buttons -->
+
+
+<div class="flex justify-center gap-5 mt-8">
+
+
+<button onclick="updateProfile()"
+class="bg-yellow-500 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-400">
+
+
+Update Profile
+
+</button>
+
+
+
+
+
+<button onclick="changePassword()"
+class="border border-yellow-500 text-yellow-400 px-6 py-3 rounded-lg hover:bg-yellow-500 hover:text-black">
+
+
+Change Password
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function updateProfile(){
+
+alert("Profile Updated Successfully!");
+
+}
+
+
+
+function changePassword(){
+
+alert("Redirecting to Change Password Page");
+
+}
+
+
+
+</script>
+
+
+
+{% endblock %}

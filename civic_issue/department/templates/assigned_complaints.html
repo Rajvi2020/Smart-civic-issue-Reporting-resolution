@@ -1,0 +1,299 @@
+{% extends 'base.html' %}
+
+{% block title %}Assigned Complaints{% endblock %}
+{% block page_title %}Assigned Complaints{% endblock %}
+
+
+{% block content %}
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl shadow-lg overflow-hidden">
+
+    <!-- Header -->
+    <div class="p-6 border-b border-gray-700 flex justify-between items-center">
+
+        <h2 class="text-2xl font-bold text-yellow-400">
+            Assigned Complaints
+        </h2>
+
+        <input 
+        id="search"
+        type="text"
+        placeholder="Search complaint..."
+        class="bg-gray-800 text-white px-4 py-2 rounded-lg border border-yellow-500 focus:outline-none">
+
+    </div>
+
+
+    <!-- Table -->
+
+    <div class="overflow-x-auto">
+
+        <table class="w-full text-left">
+
+            <thead class="bg-yellow-500 text-black">
+
+                <tr>
+
+                    <th class="p-4">ID</th>
+                    <th class="p-4">Citizen</th>
+                    <th class="p-4">Category</th>
+                    <th class="p-4">Location</th>
+                    <th class="p-4">Priority</th>
+                    <th class="p-4">Status</th>
+                    <th class="p-4">Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="complaintTable" class="text-white">
+
+
+                <tr class="border-b border-gray-700 hover:bg-gray-800">
+
+                    <td class="p-4">#1001</td>
+                    <td class="p-4">Riya</td>
+                    <td class="p-4">Garbage</td>
+                    <td class="p-4">Rajkot</td>
+
+
+                    <td class="p-4">
+
+                        <span class="bg-red-500 px-3 py-1 rounded-full">
+                            High
+                        </span>
+
+                    </td>
+
+
+                    <td class="p-4">
+
+                        <span class="bg-yellow-500 text-black px-3 py-1 rounded-full">
+                            Pending
+                        </span>
+
+                    </td>
+
+
+                    <td class="p-4">
+
+                        <button onclick="viewComplaint(1001)"
+                        class="bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-400">
+
+                            View
+
+                        </button>
+
+                    </td>
+
+
+                </tr>
+
+
+
+                <tr class="border-b border-gray-700 hover:bg-gray-800">
+
+
+                    <td class="p-4">#1002</td>
+                    <td class="p-4">Amit</td>
+                    <td class="p-4">Pothole</td>
+                    <td class="p-4">Kalawad Road</td>
+
+
+                    <td class="p-4">
+
+                        <span class="bg-orange-500 px-3 py-1 rounded-full">
+                            Medium
+                        </span>
+
+                    </td>
+
+
+                    <td class="p-4">
+
+                        <span class="bg-blue-500 px-3 py-1 rounded-full">
+                            In Progress
+                        </span>
+
+                    </td>
+
+
+                    <td class="p-4">
+
+                        <button onclick="viewComplaint(1002)"
+                        class="bg-yellow-500 text-black px-4 py-2 rounded-lg">
+
+                        View
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+
+
+                <tr class="hover:bg-gray-800">
+
+                    <td class="p-4">#1003</td>
+                    <td class="p-4">Priya</td>
+                    <td class="p-4">Street Light</td>
+                    <td class="p-4">University Road</td>
+
+
+                    <td class="p-4">
+
+                        <span class="bg-green-600 px-3 py-1 rounded-full">
+                            Low
+                        </span>
+
+                    </td>
+
+
+                    <td class="p-4">
+
+                        <span class="bg-green-500 px-3 py-1 rounded-full">
+                            Resolved
+                        </span>
+
+                    </td>
+
+
+                    <td class="p-4">
+
+                        <button onclick="viewComplaint(1003)"
+                        class="bg-yellow-500 text-black px-4 py-2 rounded-lg">
+
+                        View
+
+                        </button>
+
+                    </td>
+
+
+                </tr>
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- Modal -->
+
+<div id="modal"
+class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+
+
+<div class="bg-gray-900 border border-yellow-500 p-8 rounded-xl w-96">
+
+
+<h2 class="text-xl text-yellow-400 font-bold mb-4">
+Complaint Details
+</h2>
+
+
+<p id="details"
+class="text-white mb-5">
+</p>
+
+
+<button onclick="closeModal()"
+class="bg-yellow-500 text-black px-5 py-2 rounded-lg">
+
+Close
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+// Search Function
+
+document.getElementById("search").addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase();
+
+let rows=document.querySelectorAll("#complaintTable tr");
+
+
+rows.forEach(row=>{
+
+let text=row.innerText.toLowerCase();
+
+
+if(text.includes(value))
+{
+row.style.display="";
+}
+
+else
+{
+row.style.display="none";
+}
+
+
+});
+
+
+});
+
+
+
+
+
+// View Complaint
+
+function viewComplaint(id){
+
+document.getElementById("modal").classList.remove("hidden");
+
+
+document.getElementById("details").innerHTML=
+`
+Complaint ID : #${id}<br><br>
+
+Department : Cleaning Department<br>
+
+Status : Pending<br>
+
+Assigned Date : 10 July 2026
+
+`;
+
+}
+
+
+
+
+
+function closeModal(){
+
+document.getElementById("modal").classList.add("hidden");
+
+}
+
+
+</script>
+
+
+
+{% endblock %}

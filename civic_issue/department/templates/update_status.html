@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Update Status{% endblock %}
+
+{% block page_title %}Update Complaint Status{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<div class="max-w-xl mx-auto bg-gray-900 border border-yellow-500 rounded-xl p-8 shadow-lg">
+
+
+
+<h2 class="text-2xl font-bold text-yellow-400 mb-6">
+
+Update Complaint Status
+
+</h2>
+
+
+
+
+<label class="text-gray-300">
+
+Complaint ID
+
+</label>
+
+
+<input 
+type="text"
+value="#1001"
+readonly
+class="w-full mt-2 mb-5 bg-gray-800 text-white p-3 rounded-lg border border-gray-700">
+
+
+
+
+
+<label class="text-gray-300">
+
+Select Status
+
+</label>
+
+
+<select id="status"
+class="w-full mt-2 bg-gray-800 text-white p-3 rounded-lg border border-yellow-500">
+
+
+<option>
+Pending
+</option>
+
+
+<option>
+Assigned
+</option>
+
+
+<option>
+Inspection
+</option>
+
+
+<option>
+In Progress
+</option>
+
+
+<option>
+Resolved
+</option>
+
+
+<option>
+Closed
+</option>
+
+
+</select>
+
+
+
+
+
+<label class="text-gray-300 block mt-5">
+
+Remark
+
+</label>
+
+
+<textarea 
+id="remark"
+placeholder="Enter update details..."
+class="w-full mt-2 bg-gray-800 text-white p-3 rounded-lg border border-gray-700">
+
+</textarea>
+
+
+
+
+
+<button onclick="updateStatus()"
+
+class="mt-6 w-full bg-yellow-500 text-black font-bold py-3 rounded-lg hover:bg-yellow-400">
+
+Update Status
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function updateStatus(){
+
+
+let status=document.getElementById("status").value;
+
+let remark=document.getElementById("remark").value;
+
+
+
+alert(
+"Complaint Status Updated\n\nStatus : "
++status+
+"\nRemark : "
++remark
+);
+
+
+
+}
+
+
+</script>
+
+
+
+{% endblock %}

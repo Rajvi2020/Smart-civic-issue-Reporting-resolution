@@ -1,0 +1,481 @@
+{% extends 'base.html' %}
+
+{% block title %}Reports{% endblock %}
+
+{% block page_title %}Reports{% endblock %}
+
+
+{% block content %}
+
+
+<!-- Report Cards -->
+
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl p-6 shadow-lg hover:scale-105 duration-300">
+
+<h3 class="text-gray-400">
+Total Complaints
+</h3>
+
+<h1 class="text-4xl font-bold text-yellow-400 mt-3">
+500
+</h1>
+
+<p class="text-green-400 mt-2">
++12% this month
+</p>
+
+</div>
+
+
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl p-6 shadow-lg hover:scale-105 duration-300">
+
+<h3 class="text-gray-400">
+Resolved Rate
+</h3>
+
+<h1 class="text-4xl font-bold text-green-400 mt-3">
+85%
+</h1>
+
+<p class="text-gray-300 mt-2">
+425 Completed
+</p>
+
+</div>
+
+
+
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl p-6 shadow-lg hover:scale-105 duration-300">
+
+<h3 class="text-gray-400">
+Average Resolution Time
+</h3>
+
+<h1 class="text-4xl font-bold text-blue-400 mt-3">
+2.5 Days
+</h1>
+
+<p class="text-gray-300 mt-2">
+Fast Response
+</p>
+
+</div>
+
+
+
+
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl p-6 shadow-lg hover:scale-105 duration-300">
+
+<h3 class="text-gray-400">
+Citizen Rating
+</h3>
+
+<h1 class="text-4xl font-bold text-yellow-400 mt-3">
+4.6 ⭐
+</h1>
+
+<p class="text-gray-300 mt-2">
+Based on feedback
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Reports Table -->
+
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl overflow-hidden mb-8">
+
+
+<div class="p-5 border-b border-gray-700">
+
+<h2 class="text-2xl font-bold text-yellow-400">
+Complaint Summary Report
+</h2>
+
+</div>
+
+
+
+
+<div class="overflow-x-auto">
+
+
+<table class="w-full text-left">
+
+
+<thead class="bg-yellow-500 text-black">
+
+
+<tr>
+
+<th class="p-4">
+Category
+</th>
+
+
+<th class="p-4">
+Total
+</th>
+
+
+<th class="p-4">
+Pending
+</th>
+
+
+<th class="p-4">
+In Progress
+</th>
+
+
+<th class="p-4">
+Resolved
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody class="text-white">
+
+
+<tr class="border-b border-gray-700 hover:bg-gray-800">
+
+<td class="p-4">
+Garbage Overflow
+</td>
+
+<td class="p-4">
+120
+</td>
+
+<td class="p-4">
+25
+</td>
+
+<td class="p-4">
+30
+</td>
+
+<td class="p-4">
+65
+</td>
+
+</tr>
+
+
+
+<tr class="border-b border-gray-700 hover:bg-gray-800">
+
+<td class="p-4">
+Pothole
+</td>
+
+<td class="p-4">
+90
+</td>
+
+<td class="p-4">
+20
+</td>
+
+<td class="p-4">
+15
+</td>
+
+<td class="p-4">
+55
+</td>
+
+</tr>
+
+
+
+
+<tr class="hover:bg-gray-800">
+
+<td class="p-4">
+Street Light
+</td>
+
+<td class="p-4">
+60
+</td>
+
+<td class="p-4">
+10
+</td>
+
+<td class="p-4">
+20
+</td>
+
+<td class="p-4">
+30
+</td>
+
+</tr>
+
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Performance Section -->
+
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+
+
+<!-- Department Performance -->
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl p-6">
+
+
+<h2 class="text-2xl font-bold text-yellow-400 mb-5">
+Department Performance
+</h2>
+
+
+
+<p class="text-gray-300">
+Resolution Progress
+</p>
+
+
+<div class="bg-gray-700 h-4 rounded-full mt-3">
+
+<div class="bg-green-500 h-4 rounded-full"
+style="width:85%">
+</div>
+
+</div>
+
+
+<p class="text-green-400 mt-2">
+85% Completed
+</p>
+
+
+
+<br>
+
+
+<p class="text-gray-300">
+Pending Work
+</p>
+
+
+<div class="bg-gray-700 h-4 rounded-full mt-3">
+
+
+<div class="bg-red-500 h-4 rounded-full"
+style="width:25%">
+</div>
+
+
+</div>
+
+
+<p class="text-red-400 mt-2">
+25% Pending
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Category Report -->
+
+
+<div class="bg-gray-900 border border-yellow-500 rounded-xl p-6">
+
+
+<h2 class="text-2xl font-bold text-yellow-400 mb-5">
+Category Wise Report
+</h2>
+
+
+
+<div class="space-y-5">
+
+
+<div>
+
+<div class="flex justify-between text-white">
+
+<span>
+Garbage
+</span>
+
+<span>
+120
+</span>
+
+</div>
+
+
+<div class="bg-gray-700 h-3 rounded-full mt-2">
+
+<div class="bg-yellow-400 h-3 rounded-full"
+style="width:80%">
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div>
+
+
+<div class="flex justify-between text-white">
+
+<span>
+Pothole
+</span>
+
+<span>
+90
+</span>
+
+</div>
+
+
+<div class="bg-gray-700 h-3 rounded-full mt-2">
+
+<div class="bg-blue-500 h-3 rounded-full"
+style="width:60%">
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div>
+
+<div class="flex justify-between text-white">
+
+<span>
+Street Light
+</span>
+
+<span>
+60
+</span>
+
+</div>
+
+
+<div class="bg-gray-700 h-3 rounded-full mt-2">
+
+
+<div class="bg-green-500 h-3 rounded-full"
+style="width:40%">
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- JavaScript -->
+
+
+<script>
+
+
+console.log("Reports Page Loaded");
+
+
+// Card Animation
+
+let cards=document.querySelectorAll(".hover\\:scale-105");
+
+
+cards.forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform="scale(1.05)";
+
+});
+
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="scale(1)";
+
+});
+
+
+});
+
+
+</script>
+
+
+
+{% endblock %}

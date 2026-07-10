@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Left Side -->
+
+    <div class="left-section">
+
+        <div class="overlay">
+
+            <h1>Smart Civic Issue Portal</h1>
+
+            <p>
+                Department Portal for handling assigned complaints,
+                updating complaint status, uploading resolution photos,
+                and providing transparent complaint tracking.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="right-section">
+
+        <div class="login-box">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-building"></i>
+
+            </div>
+
+            <h2>Department Login</h2>
+
+            <p class="subtitle">
+                Sign in to continue
+            </p>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <!-- Department ID -->
+
+                <div class="input-group">
+
+                    <label>Department ID</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            name="department_id"
+                            placeholder="Enter Department ID"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter Password"
+                            required>
+
+                        <span id="togglePassword">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- Remember -->
+
+                <div class="options">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="#">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+                <!-- Button -->
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login
+
+                </button>
+<div class="signup-link">
+
+<p>
+Don't have an account?
+
+<a href="/signup/">
+    Sign Up
+</a>
+
+</p>
+
+</div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="{% static 'js/login.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Department Signup</title>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="signup-container">
+
+    <div class="left-section">
+
+    <div class="overlay">
+
+        <h1>Smart Civic Issue Portal</h1>
+
+        <p>
+            Department Portal for handling assigned complaints,
+            updating complaint status, uploading resolution photos,
+            and providing transparent complaint tracking.
+        </p>
+
+    </div>
+
+</div>
+
+    <div class="signup-box">
+
+
+
+        <div class="icon">
+
+            <i class="fa-solid fa-building-shield"></i>
+
+        </div>
+
+
+
+        <h1>
+            Create Account
+        </h1>
+
+
+        <p class="subtitle">
+
+            Register Department Portal Account
+
+        </p>
+
+
+
+
+        <form method="POST">
+
+
+            {% csrf_token %}
+
+
+
+            <!-- Department Name -->
+
+
+            <div class="input-group">
+
+
+                <label>
+                    Department Name
+                </label>
+
+
+                <div class="input-box">
+
+
+                    <i class="fa-solid fa-building"></i>
+
+
+                    <input 
+                    type="text"
+                    name="department_name"
+                    placeholder="Enter Department Name"
+                    required>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <!-- Email -->
+
+
+            <div class="input-group">
+
+
+                <label>
+                    Email Address
+                </label>
+
+
+                <div class="input-box">
+
+
+                    <i class="fa-solid fa-envelope"></i>
+
+
+                    <input 
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    required>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <!-- Department ID -->
+
+
+            <div class="input-group">
+
+
+                <label>
+                    Department ID
+                </label>
+
+
+                <div class="input-box">
+
+
+                    <i class="fa-solid fa-id-card"></i>
+
+
+                    <input 
+                    type="text"
+                    name="department_id"
+                    placeholder="Create Department ID"
+                    required>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- Password -->
+
+
+            <div class="input-group">
+
+
+                <label>
+                    Password
+                </label>
+
+
+                <div class="input-box">
+
+
+                    <i class="fa-solid fa-lock"></i>
+
+
+                    <input 
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create Password"
+                    required>
+
+
+
+                    <span id="togglePassword">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- Confirm Password -->
+
+
+            <div class="input-group">
+
+
+                <label>
+                    Confirm Password
+                </label>
+
+
+                <div class="input-box">
+
+
+                    <i class="fa-solid fa-lock"></i>
+
+
+                    <input 
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    placeholder="Confirm Password"
+                    required>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <button type="submit">
+
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Create Account
+
+
+            </button>
+
+
+
+
+
+
+            <div class="login-link">
+
+
+                Already have account?
+
+
+                <a href="/login/">
+
+                    Login
+
+                </a>
+
+
+            </div>
+
+
+
+        </form>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+<script src="{% static 'js/signup.js' %}"></script>
+
+
+</body>
+
+
+</html>
