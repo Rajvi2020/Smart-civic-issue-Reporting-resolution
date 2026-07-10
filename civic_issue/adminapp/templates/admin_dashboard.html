@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body class="bg-black text-white">
+
+
+<!-- Sidebar -->
+
+<div class="flex">
+
+
+<aside class="w-64 min-h-screen bg-zinc-900 border-r border-gray-800 p-6">
+
+
+<h1 class="text-2xl font-bold mb-10">
+Smart <span class="text-yellow-400">Civic</span>
+</h1>
+
+
+<ul class="space-y-5">
+
+
+<li>
+<a href="#" class="flex gap-3 items-center text-yellow-400">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+
+<li>
+<a href="#" class="flex gap-3 items-center hover:text-yellow-400">
+<i class="fa-solid fa-users"></i>
+Citizens
+</a>
+</li>
+
+
+<li>
+<a href="#" class="flex gap-3 items-center hover:text-yellow-400">
+<i class="fa-solid fa-building"></i>
+Departments
+</a>
+</li>
+
+
+<li>
+<a href="#" class="flex gap-3 items-center hover:text-yellow-400">
+<i class="fa-solid fa-file-lines"></i>
+Complaints
+</a>
+</li>
+
+
+<li>
+<a href="#" class="flex gap-3 items-center hover:text-yellow-400">
+<i class="fa-solid fa-map"></i>
+Live Map
+</a>
+</li>
+
+
+<li>
+<a href="#" class="flex gap-3 items-center hover:text-yellow-400">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+
+
+<!-- Main Content -->
+
+<main class="flex-1 p-8">
+
+
+
+<!-- Header -->
+
+<div class="flex justify-between items-center mb-10">
+
+
+<div>
+
+<h2 class="text-4xl font-bold">
+Admin Dashboard
+</h2>
+
+<p class="text-gray-400 mt-2">
+Smart Civic Issue Monitoring System
+</p>
+
+</div>
+
+
+
+<div class="bg-zinc-900 px-5 py-3 rounded-xl border border-gray-800">
+
+<i class="fa-solid fa-user-shield text-yellow-400"></i>
+
+Admin
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- Cards -->
+
+
+<div class="grid md:grid-cols-3 gap-6">
+
+
+
+<div class="bg-zinc-900 p-6 rounded-2xl border border-gray-800">
+
+<div class="flex justify-between">
+
+<i class="fa-solid fa-users text-4xl text-yellow-400"></i>
+
+<h3 class="text-3xl font-bold">
+250
+</h3>
+
+</div>
+
+
+<p class="text-gray-400 mt-4">
+Total Citizens
+</p>
+
+</div>
+
+
+
+
+
+<div class="bg-zinc-900 p-6 rounded-2xl border border-gray-800">
+
+
+<div class="flex justify-between">
+
+<i class="fa-solid fa-building text-4xl text-yellow-400"></i>
+
+<h3 class="text-3xl font-bold">
+8
+</h3>
+
+</div>
+
+
+<p class="text-gray-400 mt-4">
+Total Departments
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="bg-zinc-900 p-6 rounded-2xl border border-gray-800">
+
+
+<div class="flex justify-between">
+
+<i class="fa-solid fa-file-circle-exclamation text-4xl text-yellow-400"></i>
+
+<h3 class="text-3xl font-bold">
+540
+</h3>
+
+</div>
+
+
+<p class="text-gray-400 mt-4">
+Total Complaints
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="bg-zinc-900 p-6 rounded-2xl border border-gray-800">
+
+
+<div class="flex justify-between">
+
+<i class="fa-solid fa-car text-4xl text-yellow-400"></i>
+
+<h3 class="text-3xl font-bold">
+120
+</h3>
+
+</div>
+
+
+<p class="text-gray-400 mt-4">
+Traffic Reports
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="bg-zinc-900 p-6 rounded-2xl border border-gray-800">
+
+
+<div class="flex justify-between">
+
+<i class="fa-solid fa-circle-check text-4xl text-green-400"></i>
+
+<h3 class="text-3xl font-bold">
+350
+</h3>
+
+</div>
+
+
+<p class="text-gray-400 mt-4">
+Resolved Issues
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="bg-zinc-900 p-6 rounded-2xl border border-gray-800">
+
+
+<div class="flex justify-between">
+
+<i class="fa-solid fa-clock text-4xl text-red-400"></i>
+
+<h3 class="text-3xl font-bold">
+190
+</h3>
+
+</div>
+
+
+<p class="text-gray-400 mt-4">
+Pending Issues
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Recent Complaints -->
+
+
+<div class="mt-10 bg-zinc-900 p-6 rounded-2xl border border-gray-800">
+
+
+<h2 class="text-2xl font-bold mb-5">
+Recent Complaints
+</h2>
+
+
+
+<table class="w-full text-left">
+
+
+<tr class="border-b border-gray-700 text-gray-400">
+
+<th class="p-3">Issue</th>
+<th>Citizen</th>
+<th>Department</th>
+<th>Status</th>
+
+</tr>
+
+
+
+<tr class="border-b border-gray-800">
+
+<td class="p-3">
+Road Damage
+</td>
+
+<td>
+Rahul
+</td>
+
+<td>
+Road Department
+</td>
+
+<td class="text-yellow-400">
+Pending
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td class="p-3">
+Street Light
+</td>
+
+<td>
+Amit
+</td>
+
+<td>
+Electricity
+</td>
+
+<td class="text-green-400">
+Resolved
+</td>
+
+</tr>
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+</body>
+
+</html>
