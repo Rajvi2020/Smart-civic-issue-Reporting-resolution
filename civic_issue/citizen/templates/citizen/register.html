@@ -1,0 +1,249 @@
+{% extends "citizen/base.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+
+{% block auth_content %}
+
+<div class="min-h-screen bg-black flex">
+
+
+    <!-- Left Side -->
+
+    <div class="hidden lg:flex w-1/2 items-center justify-center px-20">
+
+        <div>
+
+            <h1 class="text-6xl font-bold text-yellow-400 leading-tight">
+
+                Smart Civic Issue Portal
+
+            </h1>
+
+
+            <p class="text-gray-300 mt-8 text-xl leading-9">
+
+                Report potholes, garbage overflow,
+                water leakage and other civic issues.
+
+                Track complaints in real time and
+                make your city better.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Right Side -->
+
+
+    <div class="w-full lg:w-1/2 flex items-center justify-center">
+
+
+        <div class="login-card">
+
+
+            <h2 class="text-4xl font-bold text-yellow-400 text-center mb-8">
+
+                Citizen Registration
+
+            </h2>
+
+
+
+
+            {% if error %}
+
+            <p class="text-red-500 text-center mb-4">
+
+                {{ error }}
+
+            </p>
+
+            {% endif %}
+
+
+
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+
+                <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                class="input-box"
+                required>
+
+
+
+
+                <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name"
+                class="input-box"
+                required>
+
+
+
+
+                <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                class="input-box"
+                required>
+
+
+
+
+                <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                class="input-box"
+                required>
+
+
+
+
+                <input
+                type="password"
+                name="password1"
+                placeholder="Password"
+                class="input-box"
+                required>
+
+
+
+
+                <input
+                type="password"
+                name="password2"
+                placeholder="Confirm Password"
+                class="input-box"
+                required>
+
+
+
+
+                <!-- Extra Citizen Details -->
+
+
+                <input
+                type="text"
+                name="mobile"
+                placeholder="Mobile Number"
+                class="input-box"
+                required>
+
+
+
+
+                <textarea
+                name="address"
+                placeholder="Address"
+                class="input-box"
+                rows="3"
+                required></textarea>
+
+
+
+
+                <input
+                type="text"
+                name="city"
+                placeholder="City"
+                class="input-box"
+                required>
+
+
+
+
+                <input
+                type="text"
+                name="state"
+                placeholder="State"
+                class="input-box"
+                required>
+
+
+
+
+                <input
+                type="text"
+                name="pincode"
+                placeholder="Pincode"
+                class="input-box"
+                required>
+
+
+
+
+
+                <button 
+                type="submit" 
+                class="login-btn">
+
+                    Create Account
+
+                </button>
+
+
+
+
+            </form>
+
+
+
+
+
+            <div class="text-center mt-8">
+
+
+                <span class="text-gray-400">
+
+                    Already have an account?
+
+                </span>
+
+
+
+
+                <a href="{% url 'login' %}" 
+                class="text-yellow-400 font-bold">
+
+                    Login
+
+                </a>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+{% endblock %}

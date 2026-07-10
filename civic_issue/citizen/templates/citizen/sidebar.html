@@ -1,0 +1,63 @@
+<div class="w-72 bg-gray-900 p-6 min-h-screen">
+
+
+    <h1 class="text-3xl font-bold text-yellow-400 mb-10">
+        Smart Civic
+    </h1>
+
+
+    <nav class="space-y-4">
+
+
+        <a href="{% url 'dashboard' %}"
+        class="block p-3 rounded hover:bg-yellow-400 hover:text-black">
+            🏠 Dashboard
+        </a>
+
+
+
+        <a href="{% url 'report_issue' %}"
+        class="block p-3 rounded hover:bg-yellow-400 hover:text-black">
+            📝 Report Issue
+        </a>
+
+
+
+        <a href="{% url 'my_complaints' %}"
+        class="block p-3 rounded hover:bg-yellow-400 hover:text-black">
+            📋 My Complaints
+        </a>
+
+
+
+        <a href="{% url 'track_status' %}"
+        class="block p-3 rounded hover:bg-yellow-400 hover:text-black">
+            📍 Track Status
+        </a>
+
+
+
+        <a href="{% url 'public_complaints' %}"
+        class="block p-3 rounded hover:bg-yellow-400 hover:text-black">
+            👍 Upvote Issues
+        </a>
+
+
+
+        <a href="{% url 'profile' %}"
+        class="block p-3 rounded hover:bg-yellow-400 hover:text-black">
+            👤 My Profile
+        </a>
+
+
+
+        <a href="{% url 'logout' %}"
+        class="block p-3 rounded bg-red-600 hover:bg-red-700 mt-10">
+            🚪 Logout
+        </a>
+
+
+    </nav>
+
+
+</div>

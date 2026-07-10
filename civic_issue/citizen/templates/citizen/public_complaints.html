@@ -1,0 +1,145 @@
+{% extends "citizen/base.html" %}
+
+{% block title %}
+Public Issues
+{% endblock %}
+
+{% block content %}
+
+<div class="w-full min-h-screen bg-black text-white p-8 lg:p-10">
+
+    <div class="mb-10">
+        <h1 class="text-5xl font-bold text-yellow-400">
+            Public Civic Issues
+        </h1>
+
+        <p class="text-gray-400 mt-3 text-lg">
+            View, support and give feedback on public civic complaints.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-10">
+
+        {% for complaint in complaints %}
+
+        <div class="w-full bg-gray-900 rounded-2xl border border-gray-800 shadow-xl overflow-hidden hover:border-yellow-400 transition">
+
+            {% if complaint.image %}
+            <img
+                src="{{ complaint.image.url }}"
+                class="w-full max-h-[500px] object-contain bg-gray-800">
+            {% endif %}
+
+            <div class="p-8">
+
+                <div class="flex justify-between items-start flex-wrap gap-4">
+
+                    <h2 class="text-3xl font-bold text-yellow-400">
+                        {{ complaint.title }}
+                    </h2>
+
+                    <span class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold">
+                        🔥 {{ complaint.upvotes.count }} Votes
+                    </span>
+
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+
+                    <div>
+                        <p class="text-gray-400">🏢 Department</p>
+                        <p class="text-white font-semibold mt-1">
+                            {{ complaint.department }}
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-gray-400">📍 Location</p>
+                        <p class="text-white font-semibold mt-1">
+                            {{ complaint.location }}
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="mt-8">
+                    <p class="text-gray-400 mb-2">
+                        📝 Description
+                    </p>
+
+                    <div class="bg-gray-800 rounded-xl p-5 text-gray-300 leading-7">
+                        {{ complaint.description }}
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4 mt-8">
+
+                    <a href="{% url 'upvote_issue' complaint.id %}"
+                       class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">
+
+                        👍 Upvote
+
+                    </a>
+
+                    <a href="{% url 'give_feedback' complaint.id %}"
+                       class="bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-500 transition">
+
+                        ⭐ Give Feedback
+
+                    </a>
+
+                </div>
+
+                <div class="mt-10">
+
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-6">
+                        ⭐ Citizen Feedback
+                    </h3>
+
+                    {% for feedback in complaint.feedbacks.all %}
+
+                    <div class="bg-gray-800 rounded-xl p-5 mb-4">
+
+                        <div class="flex justify-between flex-wrap gap-2">
+
+                            <h4 class="font-bold text-white">
+                                👤 {{ feedback.citizen.user.first_name }} {{ feedback.citizen.user.last_name }}
+                            </h4>
+
+                            <span class="text-yellow-400 font-bold">
+                                ⭐ {{ feedback.rating }}/5
+                            </span>
+
+                        </div>
+
+                        <p class="text-gray-300 mt-4">
+                            {{ feedback.message }}
+                        </p>
+
+                        <p class="text-gray-500 text-sm mt-4">
+                            {{ feedback.created_at|date:"d M Y, h:i A" }}
+                        </p>
+
+                    </div>
+
+                    {% empty %}
+
+                    <div class="bg-gray-800 rounded-xl p-5 text-gray-400">
+                        No feedback yet.
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

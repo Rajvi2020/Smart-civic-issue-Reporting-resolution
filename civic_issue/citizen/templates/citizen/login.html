@@ -1,0 +1,245 @@
+{% extends "citizen/base.html" %}
+
+{% block title %}
+Citizen Login
+{% endblock %}
+
+{% block auth_content %}
+
+<div class="min-h-screen bg-black flex">
+
+
+    <!-- Left Side -->
+
+    <div class="hidden lg:flex w-1/2 items-center justify-center px-20">
+
+        <div>
+
+            <h1 class="text-6xl font-bold text-yellow-400 leading-tight">
+
+                Smart Civic Issue Portal
+
+            </h1>
+
+
+            <p class="text-gray-300 mt-8 text-xl leading-9">
+
+                Report potholes, garbage overflow,
+                water leakage and other civic issues.
+
+                Track complaints in real time and
+                make your city better.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Right Side -->
+
+    <div class="w-full lg:w-1/2 flex items-center justify-center">
+
+
+        <div class="login-card">
+
+
+            <div class="text-center">
+
+
+                <div class="text-6xl mb-4">
+                    👤
+                </div>
+
+
+                <h2 class="text-5xl font-bold text-yellow-400">
+
+                    Citizen Login
+
+                </h2>
+
+
+                <p class="text-gray-400 mt-4">
+
+                    Sign in to continue
+
+                </p>
+
+
+            </div>
+
+
+
+
+            <form method="POST" class="mt-10">
+
+                {% csrf_token %}
+
+
+
+                {% if error %}
+
+                <p class="text-red-500 text-center mb-4">
+
+                    {{error}}
+
+                </p>
+
+                {% endif %}
+
+
+
+
+                <label class="text-white">
+
+                    Username
+
+                </label>
+
+
+                <input
+                type="text"
+                name="username"
+                placeholder="Enter Username"
+                class="input-box"
+                required>
+
+
+
+
+
+                <label class="text-white mt-6 block">
+
+                    Password
+
+                </label>
+
+
+
+                <div class="relative">
+
+
+                    <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter Password"
+                    class="input-box"
+                    required>
+
+
+
+                    <button
+                    type="button"
+                    onclick="togglePassword()"
+                    class="absolute right-5 top-4 text-yellow-400">
+
+
+                        👁
+
+
+                    </button>
+
+
+                </div>
+
+
+
+
+
+                <div class="flex justify-between mt-6 text-gray-300">
+
+
+                    <label>
+
+
+                        <input type="checkbox">
+
+
+                        Remember Me
+
+
+                    </label>
+
+
+
+                    <a href="#"
+                    class="text-yellow-400">
+
+
+                        Forgot Password?
+
+
+                    </a>
+
+
+
+                </div>
+
+
+
+
+
+                <button
+                type="submit"
+                class="login-btn">
+
+
+                    Login
+
+
+                </button>
+
+
+
+
+
+
+                <div class="text-center mt-8">
+
+
+                    <span class="text-gray-400">
+
+
+                        Don't have an account?
+
+
+                    </span>
+
+
+
+                    <a href="{% url 'register' %}"
+                    class="text-yellow-400 font-semibold">
+
+
+                        Sign Up
+
+
+                    </a>
+
+
+
+                </div>
+
+
+
+            </form>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+{% endblock %}
