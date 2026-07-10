@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+
+<body class="bg-black text-white">
+
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-black/90 border-b border-gray-800 backdrop-blur z-50">
+
+        <div class="max-w-7xl mx-auto h-20 flex justify-between items-center px-6">
+
+            <div class="flex items-center gap-3">
+
+                <div class="w-12 h-12 rounded-full bg-yellow-400 text-black flex items-center justify-center">
+                    <i class="fa-solid fa-road"></i>
+                </div>
+
+                <h1 class="text-3xl font-bold">
+                    Smart <span class="text-yellow-400">Traffic</span>
+                </h1>
+
+            </div>
+
+
+            <ul class="hidden md:flex gap-8">
+
+                <li>
+                    <a href="/" class="hover:text-yellow-400">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/about" class="hover:text-yellow-400">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/features" class="hover:text-yellow-400">
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/contact" class="text-yellow-400">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- Hero Section -->
+
+    <section class="pt-36 pb-16 bg-gradient-to-r from-black via-gray-900 to-black text-center px-6">
+
+
+        <h1 class="text-6xl font-bold">
+            Contact <span class="text-yellow-400">Us</span>
+        </h1>
+
+
+        <p class="text-gray-400 mt-6 max-w-3xl mx-auto">
+
+            Have questions or suggestions? Get in touch with our Smart Traffic Assistance team.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- Contact Section -->
+
+    <section class="max-w-7xl mx-auto px-6 py-12">
+
+
+        <div class="grid md:grid-cols-2 gap-10">
+
+
+
+            <!-- Contact Info -->
+
+            <div class="bg-zinc-900 p-8 rounded-2xl border border-gray-800">
+
+
+                <h2 class="text-3xl font-bold mb-6">
+                    Get In Touch
+                </h2>
+
+
+                <div class="space-y-6">
+
+
+                    <div class="flex items-center gap-4">
+
+                        <i class="fa-solid fa-location-dot text-3xl text-yellow-400"></i>
+
+                        <p class="text-gray-400">
+                            Rajkot, Gujarat, India
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="flex items-center gap-4">
+
+                        <i class="fa-solid fa-envelope text-3xl text-yellow-400"></i>
+
+                        <p class="text-gray-400">
+                            support@smarttraffic.com
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="flex items-center gap-4">
+
+                        <i class="fa-solid fa-phone text-3xl text-yellow-400"></i>
+
+                        <p class="text-gray-400">
+                            +91 98765 43210
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <!-- Contact Form -->
+
+            <div class="bg-zinc-900 p-8 rounded-2xl border border-gray-800">
+
+
+                <h2 class="text-3xl font-bold mb-6">
+                    Send Message
+                </h2>
+
+
+
+
+                <form method="POST" class="space-y-5">
+
+                    {% csrf_token %}
+
+                    <input type="text" name="name" placeholder="Your Name"
+                        class="w-full bg-black border border-gray-700 rounded-lg p-3 outline-none focus:border-yellow-400">
+
+
+                    <input type="email" name="email" placeholder="Your Email"
+                        class="w-full bg-black border border-gray-700 rounded-lg p-3 outline-none focus:border-yellow-400">
+
+
+                    <textarea name="message" placeholder="Your Message" rows="5"
+                        class="w-full bg-black border border-gray-700 rounded-lg p-3 outline-none focus:border-yellow-400"></textarea>
+
+
+                    <button type="submit"
+                        class="bg-yellow-400 text-black px-8 py-3 rounded-lg font-bold hover:bg-yellow-300">
+
+                        Send Message
+
+                    </button>
+
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <footer class="bg-black border-t border-gray-800 py-6 text-center text-gray-400">
+
+        © 2026 Smart Traffic & Parking Assistance
+
+    </footer>
+
+
+</body>
+
+</html>

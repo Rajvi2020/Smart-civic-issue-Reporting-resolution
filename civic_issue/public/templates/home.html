@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Traffic & Parking Assistance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-black text-white">
+    <nav
+      class="fixed top-0 w-full bg-black/90 backdrop-blur border-b border-gray-800 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-black"
+            >
+              <i class="fa-solid fa-road"></i>
+            </div>
+            <h1 class="text-3xl font-bold">
+              Smart <span class="text-yellow-400">Traffic</span>
+            </h1>
+          </div>
+          <ul class="hidden md:flex gap-8 font-semibold">
+            <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+            <li><a href="/about" class="hover:text-yellow-400">About</a></li>
+            <li>
+              <a href="/features" class="hover:text-yellow-400">Features</a>
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-yellow-400">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="min-h-screen flex items-center justify-center bg-gradient-to-r from-black via-gray-900 to-black text-center px-6"
+    >
+      <div>
+        <h1 class="text-6xl font-extrabold mb-6">
+          Smart <span class="text-yellow-400">Traffic</span><br />& Parking
+          Assistance
+        </h1>
+        <p class="text-gray-300 max-w-3xl mx-auto text-xl mb-10">
+          Report traffic, find parking and help your city with real-time
+          community updates.
+        </p>
+        <a
+          href="#login"
+          class="bg-yellow-400 text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-300"
+          >Explore Now</a
+        >
+      </div>
+    </section>
+
+    <section id="login" class="bg-zinc-950 py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-5xl font-bold text-center mb-14">
+          Choose Your <span class="text-yellow-400">Portal</span>
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-zinc-900 border border-gray-800 rounded-3xl p-8 text-center hover:border-yellow-400 hover:-translate-y-2 duration-300"
+          >
+            <div class="text-6xl text-yellow-400 mb-6">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 class="text-3xl font-bold mb-4">Citizen</h3>
+            <p class="text-gray-400 mb-6">
+              Report traffic issues, find parking and help your city.
+            </p>
+            <a
+              href="\citizen\login"
+              class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold"
+              >Citizen Login</a
+            >
+          </div>
+
+          <div
+            class="bg-zinc-900 border border-gray-800 rounded-3xl p-8 text-center hover:border-yellow-400 hover:-translate-y-2 duration-300"
+          >
+            <div class="text-6xl text-yellow-400 mb-6">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h3 class="text-3xl font-bold mb-4">Department</h3>
+            <p class="text-gray-400 mb-6">
+              Monitor reports and resolve public traffic issues.
+            </p>
+            <a
+              href="#"
+              class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold"
+              >Department Login</a
+            >
+          </div>
+
+          <div
+            class="bg-zinc-900 border border-gray-800 rounded-3xl p-8 text-center hover:border-yellow-400 hover:-translate-y-2 duration-300"
+          >
+            <div class="text-6xl text-yellow-400 mb-6">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h3 class="text-3xl font-bold mb-4">Admin</h3>
+            <p class="text-gray-400 mb-6">
+              Manage users, departments, reports and analytics.
+            </p>
+            <a
+              href="#"
+              class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold"
+              >Admin Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="py-24 bg-black">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-5xl text-center font-bold mb-16">
+          Platform <span class="text-yellow-400">Features</span>
+        </h2>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div
+            class="bg-zinc-900 p-8 rounded-2xl border border-gray-800 text-center"
+          >
+            <i class="fa-solid fa-car text-5xl text-yellow-400 mb-5"></i>
+            <h3 class="font-bold text-xl mb-3">Traffic Reports</h3>
+            <p class="text-gray-400">Live traffic updates.</p>
+          </div>
+          <div
+            class="bg-zinc-900 p-8 rounded-2xl border border-gray-800 text-center"
+          >
+            <i
+              class="fa-solid fa-square-parking text-5xl text-yellow-400 mb-5"
+            ></i>
+            <h3 class="font-bold text-xl mb-3">Parking Finder</h3>
+            <p class="text-gray-400">Find nearby parking.</p>
+          </div>
+          <div
+            class="bg-zinc-900 p-8 rounded-2xl border border-gray-800 text-center"
+          >
+            <i
+              class="fa-solid fa-map-location-dot text-5xl text-yellow-400 mb-5"
+            ></i>
+            <h3 class="font-bold text-xl mb-3">Live Map</h3>
+            <p class="text-gray-400">View reports on map.</p>
+          </div>
+          <div
+            class="bg-zinc-900 p-8 rounded-2xl border border-gray-800 text-center"
+          >
+            <i class="fa-solid fa-chart-line text-5xl text-yellow-400 mb-5"></i>
+            <h3 class="font-bold text-xl mb-3">Analytics</h3>
+            <p class="text-gray-400">Traffic insights.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="bg-zinc-950 py-20 text-center px-6">
+      <h2 class="text-5xl font-bold mb-8">About</h2>
+      <p class="max-w-4xl mx-auto text-gray-400">
+        A community-driven platform where citizens report traffic and parking
+        conditions while departments monitor issues and improve city mobility.
+      </p>
+    </section>
+
+    <section id="contact" class="bg-black py-20 text-center">
+      <h2 class="text-5xl font-bold mb-8">Contact Us</h2>
+      <p class="text-gray-300">support@smarttraffic.com</p>
+      <p class="text-gray-300 mt-2">+91 9876543210</p>
+    </section>
+
+    <footer
+      class="bg-zinc-950 border-t border-gray-800 py-6 text-center text-gray-400"
+    >
+      © 2026 Smart Traffic & Parking Assistance | All Rights Reserved
+    </footer>
+  </body>
+</html>
