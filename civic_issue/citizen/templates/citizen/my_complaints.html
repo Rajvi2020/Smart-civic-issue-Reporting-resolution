@@ -1,0 +1,149 @@
+{% extends "citizen/base.html" %}
+
+{% block title %}
+My Complaints
+{% endblock %}
+
+{% block content %}
+
+<div class="w-full min-h-screen bg-black text-white p-8 lg:p-10">
+
+    <!-- Header -->
+    <div class="mb-10">
+        <h1 class="text-5xl font-bold text-yellow-400">
+            My Complaints
+        </h1>
+
+        <p class="text-gray-400 mt-3 text-lg">
+            Track your reported civic issues and their current status.
+        </p>
+    </div>
+
+    {% if complaints %}
+
+    <div class="grid grid-cols-1 gap-8">
+
+        {% for complaint in complaints %}
+
+        <div class="w-full bg-gray-900 rounded-2xl border border-gray-800 shadow-lg hover:border-yellow-400 transition duration-300 overflow-hidden">
+
+            {% if complaint.image %}
+            <div class="bg-gray-800 p-4">
+                <img
+                    src="{{ complaint.image.url }}"
+                    class="w-full max-h-[450px] object-contain rounded-xl">
+            </div>
+            {% endif %}
+
+            <div class="p-8">
+
+                <!-- Title + Status -->
+                <div class="flex justify-between items-start flex-wrap gap-4">
+
+                    <h2 class="text-3xl font-bold text-yellow-400">
+                        {{ complaint.title }}
+                    </h2>
+
+                    {% if complaint.status == "Pending" %}
+
+                    <span class="bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">
+                        Pending
+                    </span>
+
+                    {% elif complaint.status == "In Progress" %}
+
+                    <span class="bg-blue-600 text-white px-4 py-2 rounded-full font-bold">
+                        In Progress
+                    </span>
+
+                    {% else %}
+
+                    <span class="bg-green-600 text-white px-4 py-2 rounded-full font-bold">
+                        Resolved
+                    </span>
+
+                    {% endif %}
+
+                </div>
+
+                <!-- Complaint Details -->
+
+                <div class="mt-6 space-y-4 text-gray-300">
+
+                    <p>
+                        🏢
+                        <span class="text-white font-bold">
+                            Department:
+                        </span>
+
+                        {{ complaint.department }}
+                    </p>
+
+                    <p>
+                        📍
+                        <span class="text-white font-bold">
+                            Location:
+                        </span>
+
+                        {{ complaint.location }}
+                    </p>
+
+                    <div>
+
+                        📝
+                        <span class="text-white font-bold">
+                            Description:
+                        </span>
+
+                        <p class="mt-2 text-gray-400 leading-7">
+                            {{ complaint.description }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+
+                <div class="mt-8 flex justify-between items-center flex-wrap gap-4">
+
+                    <span class="text-gray-500">
+                        📅 {{ complaint.created_at|date:"d M Y, h:i A" }}
+                    </span>
+
+                    <a href="{% url 'give_feedback' complaint.id %}"
+                       class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">
+
+                        ⭐ Give Feedback
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="bg-gray-900 rounded-2xl p-16 text-center">
+
+        <h2 class="text-4xl font-bold text-yellow-400">
+            No Complaints Found
+        </h2>
+
+        <p class="text-gray-400 mt-4 text-lg">
+            You have not reported any civic issue yet.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,222 @@
+{% extends "citizen/base.html" %}
+
+
+{% block title %}
+Citizen Profile
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="min-h-screen bg-black text-white flex items-center justify-center p-10">
+
+
+<div class="
+bg-gray-900
+w-full
+max-w-4xl
+rounded-3xl
+p-10
+border border-gray-800
+">
+
+
+<div class="text-center">
+
+
+<div class="
+w-32
+h-32
+bg-yellow-400
+rounded-full
+mx-auto
+flex
+items-center
+justify-center
+text-black
+text-6xl
+">
+
+👤
+
+</div>
+
+
+
+<h1 class="
+text-4xl
+font-bold
+text-yellow-400
+mt-5
+">
+
+{{request.user.username}}
+
+</h1>
+
+
+<p class="text-gray-400">
+
+Citizen Profile
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="grid md:grid-cols-2 gap-6 mt-10">
+
+
+
+<div class="bg-gray-800 p-5 rounded-xl">
+
+<p class="text-gray-400">
+First Name
+</p>
+
+<h3 class="text-xl">
+{{request.user.first_name}}
+</h3>
+
+</div>
+
+
+
+
+<div class="bg-gray-800 p-5 rounded-xl">
+
+<p class="text-gray-400">
+Last Name
+</p>
+
+<h3 class="text-xl">
+{{request.user.last_name}}
+</h3>
+
+</div>
+
+
+
+
+
+<div class="bg-gray-800 p-5 rounded-xl">
+
+<p class="text-gray-400">
+Email
+</p>
+
+<h3 class="text-xl">
+{{request.user.email}}
+</h3>
+
+</div>
+
+
+
+
+
+<div class="bg-gray-800 p-5 rounded-xl">
+
+<p class="text-gray-400">
+Mobile
+</p>
+
+<h3 class="text-xl">
+{{citizen.mobile}}
+</h3>
+
+</div>
+
+
+
+
+
+<div class="bg-gray-800 p-5 rounded-xl">
+
+<p class="text-gray-400">
+City
+</p>
+
+<h3 class="text-xl">
+{{citizen.city}}
+</h3>
+
+</div>
+
+
+
+
+
+<div class="bg-gray-800 p-5 rounded-xl">
+
+<p class="text-gray-400">
+State
+</p>
+
+<h3 class="text-xl">
+{{citizen.state}}
+</h3>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="bg-gray-800 p-5 rounded-xl mt-6">
+
+
+<p class="text-gray-400">
+Address
+</p>
+
+
+<h3 class="text-xl">
+{{citizen.address}}
+</h3>
+
+
+</div>
+
+
+
+
+<div class="text-center mt-8">
+
+
+<button
+class="
+bg-yellow-400
+text-black
+px-8
+py-3
+rounded-full
+font-bold
+">
+
+✏ Edit Profile
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+{% endblock %}  

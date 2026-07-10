@@ -1,0 +1,192 @@
+{% extends "citizen/base.html" %}
+
+
+{% block title %}
+Report Issue
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="min-h-screen bg-black flex">
+
+
+
+<div class="hidden lg:flex w-1/2 items-center justify-center px-20">
+
+
+<div>
+
+
+<h1 class="text-6xl font-bold text-yellow-400 leading-tight">
+
+Smart Civic Issue Portal
+
+</h1>
+
+
+<p class="text-gray-300 mt-8 text-xl leading-9">
+
+Report potholes, garbage overflow,
+water leakage and other civic issues.
+
+Track complaints in real time and
+make your city better.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="w-full lg:w-1/2 flex items-center justify-center p-10">
+
+
+<div class="login-card w-full">
+
+
+<h2 class="text-4xl font-bold text-yellow-400 text-center mb-8">
+
+Report Civic Issue
+
+</h2>
+
+
+
+<form method="POST"
+enctype="multipart/form-data">
+
+
+{% csrf_token %}
+
+
+
+<input
+type="text"
+name="title"
+placeholder="Issue Title"
+class="input-box"
+required>
+
+
+
+
+<select
+name="department"
+class="input-box"
+required>
+
+
+<option value="">
+
+Select Department
+
+</option>
+
+
+<option value="Road">
+
+Road Department
+
+</option>
+
+
+<option value="Water">
+
+Water Department
+
+</option>
+
+
+<option value="Garbage">
+
+Garbage Department
+
+</option>
+
+
+<option value="Electricity">
+
+Electricity Department
+
+</option>
+
+
+<option value="Drainage">
+
+Drainage Department
+
+</option>
+
+
+<option value="Other">
+
+Other
+
+</option>
+
+
+</select>
+
+
+
+
+<textarea
+name="description"
+placeholder="Describe your issue"
+class="input-box"
+required></textarea>
+
+
+
+
+<input
+type="text"
+name="location"
+placeholder="Issue Location"
+class="input-box"
+required>
+
+
+
+<input
+type="file"
+name="image"
+class="input-box">
+
+
+
+
+
+<button
+type="submit"
+class="login-btn">
+
+Submit Complaint
+
+</button>
+
+
+
+</form>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}
